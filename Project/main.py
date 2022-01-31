@@ -1,7 +1,12 @@
 # importing the csv module
 import csv
+import email
 from operator import truediv
 import pandas as pd
+import re
+
+
+
 
 
 AdminPassword = "12345"
@@ -14,7 +19,13 @@ with open("university_records.csv", 'a') as csvfile:
  
         writer.writeheader()
 
-
+#Email Validation
+def EmailValidation(email):
+    regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    if(re.fullmatch(regex, email)):
+        return True
+    else:
+        return False
 
 def updateData():
     return
@@ -30,7 +41,17 @@ def takeInput():
 
     for key in requiredData:
         value = input("{} = ".format(key))
-        temptData.update({key: value})
+        if(key=="email" and (not EmailValidation(value))):
+            while True:
+                print("Invalid Email")
+                emailNew = input("Enter valid email address: ")
+                if(EmailValidation(emailNew)):
+                    temptData.update({key: value})
+                    break
+        else:
+            temptData.update({key: value})        
+            
+                
     print("Your Data has been added")
     return temptData
 
@@ -88,4 +109,4 @@ else:
 
 
 
-#Email Validation
+
