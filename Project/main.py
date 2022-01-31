@@ -85,3 +85,7 @@ elif(loginSelection == "2"):
     print("Student Portal")
 else:
     print("Invalid Input")
+
+
+
+#Email Validation
