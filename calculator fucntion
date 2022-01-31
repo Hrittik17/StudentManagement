@@ -1,0 +1,30 @@
+
+def add(A,B):
+    return A + B
+def sub(A,B):
+    return A - B
+def mult(A,B):
+   return A * B
+def div(A,B):
+  return A / B
+
+print("WHAT DO YOU WANT TO DO ? ")
+print("A. ADDITION ")
+print("B. SUBSTRACTION ")
+print("C. MULTIPLICATION ")
+print("D. DIVISON ")
+
+choice=input("ENTER THE OPTION: ")
+num1=input("ENTER THE FIRST NUMBER :")
+num2=input("ENTER THE SECOND NUMBER :")
+
+if choice == 'A':
+    print(num1," + ",num2," = ", add((num1,num2))
+elif choice =='B':
+    print(num1," - ",num2," = ", sub(num1,num2))
+elif choice =='C':
+    print(num1," * ", num2," = ", mult(num1,num2))
+elif choice =='D':
+    print(num1," / ",num2," + ", div(num1,num2))
+else:
+    print("PLEASE ENTER THE VALID OPTION: ")
